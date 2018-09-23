@@ -39,6 +39,13 @@
   let lastHole;
   let timeUp = false;
   let score = 0;
+  //get stored values
+  let storedHighScore = JSON.parse(localStorage.getItem('scores'));
+ 
+   // keep high score
+        if(storedHighScore > score){
+          highScore.textContent = storedHighScore;
+      }
 
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
